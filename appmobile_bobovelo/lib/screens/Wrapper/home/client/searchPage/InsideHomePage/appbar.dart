@@ -1,3 +1,4 @@
+import 'package:appmobile_bobovelo/screens/Wrapper/alerte_passage_reparateur_client.dart';
 import 'package:appmobile_bobovelo/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:appmobile_bobovelo/screens/Wrapper/home/reparateur/addServicePage/add_service_page.dart';
@@ -37,7 +38,7 @@ class MyAppBar1 extends StatelessWidget{
             onPressed: (){
               Navigator.push(context,
                           MaterialPageRoute(
-                            builder: (context) => const AddServicePage()
+                            builder: (context) => const PassageClientReparateur(repairorclient: 'Voulez vous vraiment passer en mode réparateur?', client: true)
                           ),
               );
             },

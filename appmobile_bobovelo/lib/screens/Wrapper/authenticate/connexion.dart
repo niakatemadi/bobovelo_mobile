@@ -19,7 +19,7 @@ class _PageConnexionState extends State<PageConnexion> {
   String motdepasse = '';
   String error='';
   bool loading=false;
-  bool _passwordVisibility=false;
+  bool _passwordVisibility=true;
   
 
   @override
@@ -28,6 +28,13 @@ class _PageConnexionState extends State<PageConnexion> {
     return loading? Loading() : Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.blue,Colors.white]
+          )
+        ),
         child: Center(
           child: Column(
             children:  [
@@ -48,7 +55,16 @@ class _PageConnexionState extends State<PageConnexion> {
                     child: Column(
                       children: [
                         TextFormField(
-                          decoration: TextInputDecoration1.copyWith(hintText:'Email'),
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            hintStyle: const TextStyle(
+                              color: Colors.black
+                            ),
+                            hintText: 'Email',                       
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30)
+                            )),
                           validator: (val)  {
                             if (val=='' || val!.isEmpty){
                               return 'Enter your email !';
@@ -59,6 +75,7 @@ class _PageConnexionState extends State<PageConnexion> {
                             setState(() => email=val);
                           },
                         ),
+                        const SizedBox(height: 20),
                         TextFormField(
                           decoration:  InputDecoration(
                             filled: true,
@@ -67,7 +84,9 @@ class _PageConnexionState extends State<PageConnexion> {
                               color: Colors.black
                             ),
                             hintText: 'Mot de passe',                       
-                            border: OutlineInputBorder(),                         
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30)
+                            ),                         
                             suffixIcon: IconButton(
                               icon: Icon(_passwordVisibility ?Icons.visibility : Icons.visibility_off),
                               onPressed: (){

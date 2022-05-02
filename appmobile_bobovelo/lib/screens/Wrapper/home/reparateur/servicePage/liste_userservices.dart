@@ -1,4 +1,6 @@
 import 'package:appmobile_bobovelo/models/user.dart';
+import 'package:appmobile_bobovelo/screens/Wrapper/home/reparateur/servicePage/InsideUserService/demandes_de_service.dart';
+import 'package:appmobile_bobovelo/screens/Wrapper/home/reparateur/servicePage/InsideUserService/liste_demandes_de_service.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
@@ -37,6 +39,8 @@ class _ServiceListState extends State<ServiceList> {
             
                       Map<String, dynamic> service = 
                           document.data()! as Map<String, dynamic>  ;
+
+                          final serviceid = document.id;
 
                   
                       return GestureDetector(
@@ -98,7 +102,16 @@ class _ServiceListState extends State<ServiceList> {
                                             ),
                                           ),
                                         ),
-                                        ElevatedButton(onPressed: (){}, child: Text('Voir demandes'))
+                                        ElevatedButton(
+                                          onPressed: (){
+                                            Navigator.push(context,
+                                                MaterialPageRoute(
+                                                  builder: (context) => DemandesDeService(myidservice:serviceid),
+                                                )
+                                          );
+                                          },
+                                          child: const Text('Voir demandes')
+                                        )
                                       ],
                                     ),
                                   )

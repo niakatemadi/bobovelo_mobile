@@ -36,6 +36,13 @@ class _PageInscriptionState extends State<PageInscription> {
       ),
       body:SingleChildScrollView(
         child: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.blue,Colors.white,Colors.white]
+          )
+          ),
           child: Center(
             child: Column(
               children: [

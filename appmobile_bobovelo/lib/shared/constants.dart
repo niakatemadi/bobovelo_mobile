@@ -7,6 +7,7 @@ const TextInputDecoration1 = InputDecoration(
     hintStyle: TextStyle(
       color: Colors.black
     ),
-    border: OutlineInputBorder()
+   
+    
  
 );

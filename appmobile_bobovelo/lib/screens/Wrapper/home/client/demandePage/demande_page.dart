@@ -21,7 +21,7 @@ class _DemandePageState extends State<DemandePage> {
         title: const Text('Mes demandes'),
       ),
       body: Container(
-        color: Colors.grey,
+        color: Colors.white,
         width: 393,
         child: Column(
           children: [

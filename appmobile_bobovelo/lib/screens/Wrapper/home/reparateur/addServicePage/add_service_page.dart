@@ -1,4 +1,5 @@
 import 'package:appmobile_bobovelo/models/user.dart';
+import 'package:appmobile_bobovelo/screens/Wrapper/alerte_passage_reparateur_client.dart';
 import 'package:appmobile_bobovelo/screens/Wrapper/home/client/searchPage/homepage.dart';
 import 'package:appmobile_bobovelo/screens/Wrapper/home/reparateur/servicePage/service_page.dart';
 import 'package:appmobile_bobovelo/screens/Wrapper/home/reparateur/updatePage/update_reparateur_page.dart';
@@ -36,9 +37,9 @@ class _AddServicePageState extends State<AddServicePage> {
             return IconButton(
               onPressed: (){
                 Navigator.push(context,
-                          MaterialPageRoute(
-                            builder: (context) => const HomePage(),
-                          ),
+                            MaterialPageRoute(
+                              builder: (context) => const PassageClientReparateur(repairorclient: ' Voulez-vous vraiment passer en mode client', client : false)
+                            ),
                         );
               }, 
               icon: Icon(Icons.pedal_bike)

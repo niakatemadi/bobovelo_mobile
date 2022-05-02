@@ -15,6 +15,8 @@ class _DemandeListState extends State<DemandeList> {
     final Stream<QuerySnapshot> _servicesStream =
       FirebaseFirestore.instance.collection('demandes').snapshots();
 
+      final CollectionReference demandesCollection2 = FirebaseFirestore.instance.collection('demandes');
+
   @override
   Widget build(BuildContext context) {
     final _user10 = Provider.of<User1?>(context);
@@ -93,7 +95,11 @@ class _DemandeListState extends State<DemandeList> {
                 ),
               ),
               ElevatedButton(
-                onPressed: (){},
+                onPressed: (){
+                  setState(() async{
+                                   await demandesCollection2.doc(document.id).delete();
+                                  });
+                },
                 child: const Text('Supprimer'),
                 style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red),
               )

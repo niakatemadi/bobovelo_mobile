@@ -1,7 +1,6 @@
 import 'package:appmobile_bobovelo/screens/Wrapper/home/client/demandePage/demande_page.dart';
 import 'package:appmobile_bobovelo/screens/Wrapper/home/client/searchPage/InsideHomePage/appbar.dart';
 import 'package:appmobile_bobovelo/screens/Wrapper/home/client/searchPage/InsideHomePage/service_section.dart';
-import 'package:appmobile_bobovelo/screens/Wrapper/home/client/searchPage/InsideHomePage/search_section.dart';
 import 'package:appmobile_bobovelo/screens/Wrapper/home/client/updatePage/update_page.dart';
 import 'package:appmobile_bobovelo/services/auth.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +20,6 @@ class HomePage extends StatelessWidget {
         body: Container(
           child: Column(
             children: [
-              SearchSection(),
               HotelSection()
             ],
           )
