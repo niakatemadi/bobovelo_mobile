@@ -4,7 +4,8 @@ import 'package:appmobile_bobovelo/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
-import 'package:provider/provider.dart';
+
+import 'screens/Wrapper/wrapper.dart';
 
 const d_green = Color(0xFF54D3c2);
 void main() async {
